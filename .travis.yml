@@ -1,0 +1,9 @@
+language: ruby
+script: 'bin/rake'
+sudo: false
+cache: bundler
+rvm:
+  - 2.1
+  - 2.2
+notifications:
+  email: false
