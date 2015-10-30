@@ -1,5 +1,5 @@
 language: ruby
-script: 'bin/rake'
+script: bin/rake
 sudo: false
 cache: bundler
 rvm:
@@ -7,3 +7,5 @@ rvm:
   - 2.2
 notifications:
   email: false
+  slack:
+    secure: mFUe5NZ96D+yFSqQoL04gfTw8/4VG3Lnflh0OyS/4zp5GmrlbIiHwTl8c00mG7lgXD0lmPGDHSIHhYk5mF2+LV7XNqYw29ACSJjrLe6dMPrcDfumZ46ZlwY/K+/GdGghIZY1D9xIC855E+Yx6iErZZSwAA5pB3mXt8CbCyRUvlZKg3JfQBYA5unHbygNwXgb+TQb8o6lB8Rp+3sYiw8qX3Ia7+XiWcGuuqhqCuFZTtCVRDdvH1nXCInBPIGCY5cwVRkeOaabif7AbNlKoqBQWgqp7VJrt4Ui3nCD2+uGw7faznMY9XsJ7FdFH4cZDFM71z5CyaXFKesus9zkQ3fifRo4YMB1uTl3zrmk3Th1eqrZ3Txj98yfaepsjbvuA0CcZrotxVhJeC2zWw/XhDE+PBQohM5RzA/zQU+bNuHQxTthPpM1wOIfKnKf1SZHp6Z9GFSk2BvBmmPI6r65vrICQ4F+UZ92JvUPG33ehu6UDAyda+AxmcX8hpGKVvA1VhiBDHObzf8ZdJM/T8N6G/HLvGjhIVzrB8c03D/xKVDhaZhhEfc4CxY4KQXN1pk6od8XDlXxpqkf71/ugmceP/qlSuHvUyQsYwuhErWTSbmb74KypIg0BFrZG+iik5ZQEixFuqc/NRGSvWTGp6nycnGEQVu4bZEvN9heaTZK4DAXGKA=
