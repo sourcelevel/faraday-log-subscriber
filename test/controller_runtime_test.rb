@@ -4,7 +4,14 @@ require 'active_support/log_subscriber/test_helper'
 
 class ControllerRuntimeTest < ActionController::TestCase
 
+  ActiveSupport::Deprecation.silence do
+    TestRoutes = ActionDispatch::Routing::RouteSet.new
+    TestRoutes.draw { get ':controller(/:action)' }
+  end
+
   class LogSubscriberController < ActionController::Base
+    include TestRoutes.url_helpers
+
     def zero
       render inline: 'Zero HTTP runtime'
     end
@@ -33,12 +40,7 @@ class ControllerRuntimeTest < ActionController::TestCase
 
   def setup
     super
-
-    ActiveSupport::Deprecation.silence do
-      @routes = ActionDispatch::Routing::RouteSet.new
-      @routes.draw { get ':controller(/:action)' }
-    end
-
+    @routes = TestRoutes
     ActionController::LogSubscriber.attach_to :action_controller
   end
 
