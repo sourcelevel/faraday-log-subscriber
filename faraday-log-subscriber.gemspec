@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'faraday-log-subscriber'
-  spec.version       = '0.1.0'
+  spec.version       = '0.2.0'
   spec.authors       = ['Lucas Mazza']
   spec.email         = ['opensource@plataformatec.com.br']
 
