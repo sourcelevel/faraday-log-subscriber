@@ -4,6 +4,11 @@ module Faraday
 
     protected
 
+    def process_action(action, *args)
+      Faraday::LogSubscriber.reset_runtime
+      super
+    end
+
     def append_info_to_payload(payload)
       super
       payload[:faraday_runtime] = Faraday::LogSubscriber.runtime
