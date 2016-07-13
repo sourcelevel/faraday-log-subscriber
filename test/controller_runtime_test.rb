@@ -1,9 +1,7 @@
 require 'test_helper'
 require 'active_support/log_subscriber/test_helper'
 
-
 class ControllerRuntimeTest < ActionController::TestCase
-
   ActiveSupport::Deprecation.silence do
     TestRoutes = ActionDispatch::Routing::RouteSet.new
     TestRoutes.draw { get ':controller(/:action)' }
@@ -33,10 +31,8 @@ class ControllerRuntimeTest < ActionController::TestCase
     end
   end
 
-
   include ActiveSupport::LogSubscriber::TestHelper
   tests LogSubscriberController
-
 
   def setup
     super
