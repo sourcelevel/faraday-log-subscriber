@@ -2,9 +2,12 @@ require 'test_helper'
 require 'active_support/log_subscriber/test_helper'
 
 class ControllerRuntimeTest < ActionController::TestCase
-  ActiveSupport::Deprecation.silence do
-    TestRoutes = ActionDispatch::Routing::RouteSet.new
-    TestRoutes.draw { get ':controller(/:action)' }
+  TestRoutes = ActionDispatch::Routing::RouteSet.new
+  TestRoutes.draw do
+    get 'zero', to: 'controller_runtime_test/log_subscriber#zero'
+    get 'show', to: 'controller_runtime_test/log_subscriber#show'
+    get 'redirect', to: 'controller_runtime_test/log_subscriber#redirect'
+    get 'faraday_after_render', to: 'controller_runtime_test/log_subscriber#faraday_after_render'
   end
 
   class LogSubscriberController < ActionController::Base
